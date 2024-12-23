@@ -49,7 +49,7 @@ const PokemonGrid = ({ pokemonData }) => {
     filteredProducts.length > 0 ? filteredProducts : pokemonData;
 
   useEffect(() => {
-    console.log(pokemonData); // Log pokemonData for debugging
+    console.log(pokemonData);
   }, [pokemonData]);
 
   return (
@@ -58,7 +58,7 @@ const PokemonGrid = ({ pokemonData }) => {
       <Navbar onSearch={handleSearch} />
 
       {/* Filter */}
-      <div className="flex justify-end bg-gray-200 p-4">
+      <div className="flex justify-start bg-yellow-100 p-4">
         <select
           name="filter"
           id="filter"
@@ -81,23 +81,23 @@ const PokemonGrid = ({ pokemonData }) => {
         {paginateData(currentData).map((ele) => (
           <div
             key={ele.id}
-            className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            className="bg-gray p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow"
           >
             <img
               className="w-full h-48 object-contain mb-4 mx-auto"
               src={ele.sprite}
               alt={ele.name}
             />
-            <h1 className="text-center text-xl font-semibold mb-2">
+            <h1 className="text-center text-xl font-semibold mb-2 text-red-600">
               {ele.name}
             </h1>
             <ul className="list-none pl-0 m-0 space-y-2">
               {ele.type.map((el, index) => (
                 <li
                   key={index}
-                  className="relative pl-6 text-gray-800 text-sm font-medium hover:text-blue-600"
+                  className="relative pl-6 text-gray-800 text-sm font-medium hover:text-pink-600"
                 >
-                  <span className="absolute left-0 top-0 text-2xl text-blue-500 font-bold">
+                  <span className="absolute left-0 top-0 text-2xl text-gray-500 font-bold">
                     •
                   </span>
                   {el}
@@ -113,7 +113,7 @@ const PokemonGrid = ({ pokemonData }) => {
         <button
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
-          className="px-4 py-2 bg-gray-300 text-gray-700 rounded-l-md"
+          className="px-4 py-2 bg-pink-300 text-gray-700 rounded-l-md"
         >
           Previous
         </button>
@@ -123,7 +123,7 @@ const PokemonGrid = ({ pokemonData }) => {
         <button
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
-          className="px-4 py-2 bg-gray-300 text-gray-700 rounded-r-md"
+          className="px-4 py-2 bg-pink-300 text-gray-700 rounded-r-md"
         >
           Next
         </button>

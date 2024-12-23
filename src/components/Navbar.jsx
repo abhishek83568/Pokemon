@@ -12,7 +12,7 @@ const Navbar = ({ onSearch }) => {
   };
 
   return (
-    <nav className="bg-gray-800 text-white p-4">
+    <nav className="bg-sky-800 text-white p-4">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-2xl font-bold">
           <a href="/" className="hover:text-gray-400">
@@ -30,7 +30,7 @@ const Navbar = ({ onSearch }) => {
           />
           <button
             onClick={handleSearchClick}
-            className="bg-gray-500 text-white px-4 py-2 rounded-r-md hover:bg-blue-600"
+            className="bg-pink-500 text-white px-4 py-2 rounded-r-md hover:bg-gray-600"
           >
             Search
           </button>
