@@ -9,7 +9,7 @@ const PokemonCard = () => {
   const pokemon = useSelector((state) => state.pokemon);
 
   const dispatch = useDispatch();
-  const url = `http://localhost:8977/pokemon`;
+  const url = `https://pivot-backend-gc91.onrender.com/pokemon`;
 
   useEffect(() => {
     dispatch(fetchData(url));
