@@ -8,14 +8,6 @@ const PokemonCard = () => {
   const pokemon = useSelector((state) => state.pokemon);
   const dispatch = useDispatch();
   const url = `https://pivot-backend-gc91.onrender.com/pokemon`;
-  // const fetchPokemonData = async () => {
-  //   try {
-  //     const response = await axios.get(url);
-  //     setPokemonData(response.data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
   useEffect(() => {
     dispatch(fetchData(url));
